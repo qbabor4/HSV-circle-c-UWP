@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="App7.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App7"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid HorizontalAlignment="Left" Height="630" VerticalAlignment="Top" Width="360" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="73*"/>
+                <RowDefinition Height="17*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="71*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="HsvCircleImg" Height="302" VerticalAlignment="Top" Width="302" Source="//img/hsvCircleFit.png" Margin="21,87,37,0" Grid.ColumnSpan="2" Tapped="ImageTaped" HorizontalAlignment="Center" PointerPressed="PointerPressedImage" PointerReleased="PointerReleasedImage" PointerMoved="PointerMovedImage" />
+            <TextBlock x:Name="textBlockHue" TextWrapping="Wrap" Text="Hue:" VerticalAlignment="Top" Margin="0,10,28,0" HorizontalAlignment="Right" Width="39"/>
+            <TextBlock x:Name="textBlockSaturation" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Saturation:" VerticalAlignment="Center" Margin="9,32,275,459" Width="76" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlockValue" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Value:" VerticalAlignment="Top" Margin="9,54,0,0" RenderTransformOrigin="0.136,0.043"/>
+            <TextBlock x:Name="textBlockHueOutput" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Margin="16,10,0,0" Grid.Column="1" />
+            <TextBlock x:Name="textBlockSaturationOutput" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1" Margin="16,32,0,0"/>
+            <TextBlock x:Name="textBlockValueOutput" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Margin="16,53,0,0" Grid.Column="1"/>
+            <Ellipse x:Name="BlackOverlayEllipse" IsHitTestVisible="False" Fill="#000000" HorizontalAlignment="Left" Height="302" Margin="21,87,0,0" VerticalAlignment="Top" Width="302" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Brightness:" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="19,406,0,0"/>
+            <Ellipse x:Name="PreviewColorEllipse" Fill="#FFA746AE" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="46" Grid.Column="1" Margin="201,343,0,0"/>
+            <TextBlock x:Name="textBlockRed" Grid.Column="1" HorizontalAlignment="Left" Margin="136,10,0,0" TextWrapping="Wrap" Text="Red:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlockGreen" Grid.Column="1" HorizontalAlignment="Left" Margin="136,32,0,0" TextWrapping="Wrap" Text="Green:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlockBlue" Grid.Column="1" HorizontalAlignment="Left" Margin="136,54,0,0" TextWrapping="Wrap" Text="Blue:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlockRedOutput" Grid.Column="1" HorizontalAlignment="Left" Margin="201,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" />
+            <TextBlock x:Name="textBlockGreenOutput" Grid.Column="1" HorizontalAlignment="Left" Margin="201,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlockBlueOutput" Grid.Column="1" HorizontalAlignment="Left" Margin="201,53,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+
+            <Slider x:Name="slider" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Value="100" Width="301" Margin="19,424,0,0" ValueChanged="ChangeSliderValue"/>
+            <Rectangle Fill="#FFFBFBFB" HorizontalAlignment="Left" Height="80" Margin="21,468,0,0" Stroke="Black" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="30,476,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="30,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Row="1" PointerPressed="RectangleTapped" AutomationProperties.Name="" AutomationProperties.ItemStatus="notChanged"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="65,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Row="1" Grid.ColumnSpan="2" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="65,476,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.ColumnSpan="2" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Right" Height="30" Margin="0,476,229,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="25,511,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" Grid.RowSpan="2" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="60,0,0,89" Stroke="Black" VerticalAlignment="Bottom" Width="30" Grid.Column="1" Grid.Row="1" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="60,476,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="95,476,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="95,511,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" Grid.RowSpan="2" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="130,511,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" Grid.RowSpan="2" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="130,476,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="165,476,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="165,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" Grid.Row="1" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="200,511,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" Grid.RowSpan="2" PointerPressed="RectangleTapped"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="30" Margin="200,476,0,0" Stroke="Black" VerticalAlignment="Top" Width="30" Grid.Column="1" PointerPressed="RectangleTapped"/>
+
+
+        </Grid>
+
+
+    </Grid>
+</Page>
